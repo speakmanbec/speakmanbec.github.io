@@ -1,232 +1,726 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Bec Speakman</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="css/styles.css" rel="stylesheet" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bec Speakman - TV Production Coordinator & Stage Logistics Specialist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        canva: {
+                            'royal-dark': '#18022b',   // Deepest Royal Purple for card bases
+                            'royal-main': '#2e0854',   // Rich Royal Purple
+                            'magenta-mid': '#5c1349',  // Vibrant Terracotta/Violet Accent
+                            'pink-light': '#f3e8ee',   // Soft Lavender Pink Highlight
+                            'pink-soft': '#fce8f3',    // Pale Pink
+                            'butter-yellow': '#fff4cc',// Soft Butter Yellow Accent
+                            'butter-glow': '#ffd700',  // Golden Yellow Highlight
+                            'cream-pure': '#ffffff',   // Pure Crisp White for headings
+                            'text-body': '#e2d9f3',    // High-contrast pale lilac body text
+                            'text-muted': '#c4b5fd'    // Soft purple secondary text
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #18022b;
+            color: #e2d9f3;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
 
-<body id="page-top">
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Bec Speakman</a>
-            <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded social-icon-link" href="https://www.imdb.com/name/nm6574593/" target="_blank">
-                            <i class="fab fa-imdb fa-3x"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded social-icon-link" href="https://www.linkedin.com/in/bec-speakman/" target="_blank">
-                            <i class="fab fa-linkedin-in fa-3x"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded social-icon-link" href="mailto:speakmanbec@gmail.com">
-                            <i class="fas fa-envelope fa-3x"></i>
-                        </a>
-                    </li>
-                </ul>
+        /* Fluid Canva-inspired Gradient Background */
+        .gradient-canvas-bg {
+            background: radial-gradient(circle at 15% 15%, rgba(92, 19, 73, 0.85) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 20%, rgba(255, 244, 204, 0.25) 0%, transparent 40%),
+                        radial-gradient(circle at 50% 60%, rgba(46, 8, 84, 0.95) 0%, transparent 70%),
+                        radial-gradient(circle at 80% 85%, rgba(243, 232, 238, 0.2) 0%, transparent 50%),
+                        linear-gradient(135deg, #18022b 0%, #2e0854 50%, #11011e 100%);
+            background-attachment: fixed;
+        }
+
+        /* High Contrast Glassmorphic Container Panels */
+        .glass-panel {
+            background: rgba(24, 2, 43, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(243, 232, 238, 0.18);
+        }
+
+        .glass-card {
+            background: rgba(35, 6, 62, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 244, 204, 0.22);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 244, 204, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 38px 0 rgba(92, 19, 73, 0.5);
+        }
+
+        /* Strong Text Dropshadows for Perfect Legibility */
+        .text-glow-title {
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+        }
+        .text-glow-yellow {
+            text-shadow: 0 0 12px rgba(255, 244, 204, 0.4);
+        }
+
+        /* Button Gradients */
+        .btn-magenta-gradient {
+            background: linear-gradient(135deg, #5c1349 0%, #a21c7a 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(162, 28, 122, 0.4);
+        }
+        .btn-magenta-gradient:hover {
+            background: linear-gradient(135deg, #781860 0%, #c42294 100%);
+            box-shadow: 0 6px 24px rgba(162, 28, 122, 0.6);
+        }
+
+        .btn-yellow-glow {
+            background: #fff4cc;
+            color: #18022b;
+            font-weight: 700;
+            box-shadow: 0 4px 18px rgba(255, 244, 204, 0.3);
+        }
+        .btn-yellow-glow:hover {
+            background: #ffffff;
+            box-shadow: 0 6px 22px rgba(255, 244, 204, 0.5);
+        }
+
+        /* Active Filter Pill */
+        .filter-pill.active {
+            background: #fff4cc;
+            color: #18022b;
+            border-color: #fff4cc;
+            font-weight: 700;
+            box-shadow: 0 0 12px rgba(255, 244, 204, 0.4);
+        }
+    </style>
+</head>
+<body class="gradient-canvas-bg text-canva-text-body antialiased selection:bg-canva-pink-soft selection:text-canva-royal-dark min-h-screen flex flex-col">
+
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-canva-pink-light/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl font-extrabold tracking-tight text-canva-cream-pure hover:text-canva-butter-yellow transition flex items-center gap-2">
+                Bec Speakman
+            </a>
+            
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#about" class="text-canva-cream-pure/90 hover:text-canva-butter-yellow transition">About</a>
+                <a href="#experience" class="text-canva-cream-pure/90 hover:text-canva-butter-yellow transition">Experience & Credits</a>
+                <a href="#skills" class="text-canva-cream-pure/90 hover:text-canva-butter-yellow transition">Skills</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full btn-yellow-glow text-xs uppercase tracking-wider transition">Contact Me</a>
             </div>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-canva-cream-pure hover:text-canva-butter-yellow focus:outline-none p-2 text-2xl" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-canva-pink-light/20 px-6 py-6 space-y-4 text-base font-semibold">
+            <a href="#about" class="block text-canva-cream-pure hover:text-canva-butter-yellow transition">About</a>
+            <a href="#experience" class="block text-canva-cream-pure hover:text-canva-butter-yellow transition">Experience & Credits</a>
+            <a href="#skills" class="block text-canva-cream-pure hover:text-canva-butter-yellow transition">Skills</a>
+            <a href="#contact" class="block text-center py-3 rounded-full btn-yellow-glow text-xs uppercase tracking-wider font-bold">Contact Me</a>
         </div>
     </nav>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="assets/mail/jqBootstrapValidation.js"></script>
-    <script src="assets/mail/contact_me.js"></script>
-    <script src="js/scripts.js"></script>
-</body>
 
-</html>
-        <!-- Masthead-->
-        <header class="masthead bg-white text-secondary">
-    <div class="container">
-        <div class="row align-items-center">  <div class="col-md-4">  <img class="masthead-avatar img-fluid rounded-circle mb-5 mb-md-0" src="assets/img/portfolio/bec_avatar.png" alt="" />
-            </div>
-            <div class="col-md-8 text-left">  <h1 class="masthead-heading text-uppercase mb-0">Bec Speakman</h1>
-                <div class="divider-custom divider-dark">
-                    <div class="divider-custom-line"></div>
+    <section id="about" class="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Main Statement -->
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-canva-magenta-mid/60 border border-canva-pink-soft/30 text-canva-butter-yellow text-xs font-bold uppercase tracking-widest shadow-md">
+                        <span class="w-2 h-2 rounded-full bg-canva-butter-glow animate-ping"></span>
+                        Film & Television Production
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-extrabold text-canva-cream-pure leading-tight text-glow-title">
+                        Bec Speakman
+                    </h1>
+                    
+                    <p class="text-lg sm:text-2xl text-canva-cream-pure font-light leading-relaxed max-w-2xl text-glow-title">
+                        A snapshot of my career working on <span class="text-canva-butter-yellow font-medium"> major studio features and flagship series</span>, including A24’s "Eddington", AppleTV’s "The Morning Show", HBO's "The Comeback", and Netflix’s "Beef". 
+                    </p>
+
+                    <p class="text-base text-canva-text-body/90 leading-relaxed max-w-2xl">
+                        With extensive experience managing complex, fast-moving production offices with precision and adaptability, I bridge producer vision & needs with flawless operational execution.
+                    </p>
+
+                    <!-- CTA Action Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#experience" class="px-7 py-3.5 rounded-full btn-magenta-gradient font-bold transition flex items-center gap-3">
+                            <span>View Production Credits</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#contact" class="px-7 py-3.5 rounded-full btn-yellow-glow font-bold transition flex items-center gap-2">
+                            <span>Contact Me</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </a>
+                        <a href="resume.pdf" target="_blank" class="px-6 py-3.5 rounded-full glass-card hover:bg-canva-royal-main text-canva-cream-pure font-semibold transition flex items-center gap-2 border border-canva-pink-soft/30">
+                            <i class="fa-solid fa-file-arrow-down text-canva-butter-yellow"></i>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
                 </div>
-                <p class="masthead-subheading font-weight-light mb-0"><i> Film, Television, and Media</p>
-                <p class="masthead-subheading font-weight-light mb-0">IRL: Los Angeles, CA</p>
-                <p class="masthead-subheading font-weight-light mb-0">OG: Sydney, AUS</p></i>
+
+                <!-- High-contrast Profile Summary Card -->
+                <div class="lg:col-span-4 glass-card p-8 rounded-3xl border border-canva-butter-yellow/30 relative">
+                    <div class="absolute -top-3 -right-3 px-3 py-1 bg-canva-butter-yellow text-canva-royal-dark font-bold text-xs rounded-full shadow-lg uppercase tracking-wider">
+                        Los Angeles Based
+                    </div>
+                    
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-canva-butter-yellow border-b border-canva-pink-light/20 pb-4 mb-6">
+                        Production Snapshot
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-3 border-b border-canva-pink-light/10">
+                            <span class="text-canva-text-body text-sm font-medium">Primary Focus</span>
+                            <span class="text-canva-cream-pure font-semibold text-sm">TV & Feature Film Production</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-canva-pink-light/10">
+                            <span class="text-canva-text-body text-sm font-medium">Most Recent</span>
+                            <span class="text-canva-butter-yellow font-semibold text-sm">The Morning Show S5</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-canva-pink-light/10">
+                            <span class="text-canva-text-body text-sm font-medium">Location</span>
+                            <span class="text-canva-cream-pure font-semibold text-sm">USA & Australia</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-canva-text-body text-sm font-medium">Email</span>
+                            <a href="mailto:speakmanbec@gmail.com" class="text-canva-butter-yellow hover:underline font-semibold text-sm">speakmanbec@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-</header>
-        <!-- Portfolio Section-->
-        <section class="page-section" id="experience">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Experience</h2>
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
+    </section>
+
+        <section id="experience" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-5xl font-serif font-extrabold text-canva-cream-pure mb-4 text-glow-title">
+                    Experience & Production Credits
+                </h2>
+            </div>
+
+            <!-- Associated Credits Grid -->
+                    <div>
+                        <h4 class="text-lg font-serif font-bold text-canva-cream-pure mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-film text-canva-butter-yellow"></i>
+                            <span>Production Credits</span>
+                        </h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Eddington</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Feature</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">A24</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Production Coordinator 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: New Mexico (Albuquerque, Santa Fe, Truth or Consequences) 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Director: Ari Aster
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Joaquin Phoenix, Pedro Pascal, Emma Stone, and Austin Butler
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Hurry Up Tomorrow</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Feature</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">Lionsgate</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Production Coordinator 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: California (Los Angeles) 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Director: Trey Edward Shults 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Abel "The Weeknd" Tesfaye, Jenna Ortega, and Barry Keoghan
+                                </p>
+                            </div>
+                        
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">The Morning Show</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Series</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">AppleTV+</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Assistant Production Coordinator
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: California (Los Angeles) 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Seasons: Season 3 + 4 + 5 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Jennifer Aniston, Reese Witherspoon, Billy Crudup, and Jon Hamm
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">The Comeback</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Series</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">HBO</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Assistant Production Coordinator
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: California (Los Angeles)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Seasons: Season 3 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Lisa Kudrow, Dan Bucatinsky, and Laura Silverman 
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Beef</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Series</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">Netflix/A24</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Assistant Production Coordinator
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: California (Los Angeles)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Seasons: Season 2
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Oscar Isaac, Carey Mulligan, Charles Melton, and Cailee Spaeny 
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Atlas</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Feature</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">Netflix</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Assistant Production Coordinator
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: California (Cupertino)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Director: Brad Peyton
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Jennifer Lopez, Mark Strong, Sterling K Brown, and Simu Liu
+                                </p>
+                            </div>
+
+                             <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Perry Mason</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Series</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">HBO</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Assistant Production Coordinator
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: California (Los Angeles)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Seasons: Season 2
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Matthew Rhys, Juliet Rylance, Chris Chalk, and Shea Whigham 
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Breaking</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Feature</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">Bleeker</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Assistant Production Coordinator
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: California (Los Angeles)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Director: Abi Damaris Corbin
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: John Boyega, Michael K Williams, Nicole Beharie, and Connie Britton
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Euphoria</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Series</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">HBO</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Production Secretary
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: California (Los Angeles)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Seasons: Season 2
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Zendaya, Hunter Schafer, Sydney Sweeney, and Jacob Elordi
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">The Cry</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Series</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">BBC/ABC</span>
+                                </div>
+                                </div>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Production Secretary 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: Victoria (Melbourne)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Seasons: Season 1 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Jenna Coleman, Asher Keddie, and Ewen Leslie 
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Picnic at Hanging Rock</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Series</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">Amazon/Foxtel</span>
+                                </div>
+                                </div>
+
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Position: Production Secretary 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Location: Victoria (Melbourne)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Seasons: Season 1 
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                    Cast: Natalie Dormer, Samara Weaving, Lily Sullivan, and Mark Coles Smith 
+                                </p>
+                            </div>
+
+                            <!-- Credit Item -->
+                            <div class="glass-card p-5 rounded-2xl border border-canva-pink-light/10 hover:border-canva-butter-yellow/40 transition">
+                                <div class="flex justify-between items-start mb-2 gap-3">
+                                    <!-- Title on the left -->
+                                    <h5 class="font-bold text-canva-cream-pure text-base">Relic</h5>
+                                    <!-- Both badges grouped together on the right -->
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border   border-canva-pink-light/10">Feature</span>
+                                    <span class="text-xs px-2.5 py-1 bg-canva-royal-dark text-canva-butter-yellow font-bold rounded-lg border border-canva-pink-light/10">AGBO</span>
+                                </div>
+                                </div>
+
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                Position: Producer's Assistant
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                Location: Victoria (Melbourne)
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                Director: Natalie Erika James
+                                </p>
+                                <p class="text-xs text-canva-text-body/90 leading-relaxed mb-3">
+                                Cast: Bella Heathcote, Emily Mortimer, and Robyn Nevin
+                                </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-serif font-extrabold text-canva-cream-pure mb-4 text-glow-title">
+                    Core Capabilities
+                </h2>
+                <p class="text-canva-text-body font-normal text-base">
+                    Technical & operation expertise, with confidence across all aspects of Production. 
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill Block 1 -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-canva-magenta-mid/50 border border-canva-pink-soft/30 flex items-center justify-center text-canva-butter-yellow text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-canva-cream-pure mb-4">Software</h3>
+                    <ul class="space-y-3 text-sm text-canva-text-body">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Movie Magic Budgeting</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Scenechronize & Set Keeper </li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Google Workspace & MS Office</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Asset Hub + SyncOnSet</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Docusign + AdobeSign</li>
+                    </ul>
                 </div>
 
-                <div class="mt-4">
-                    <h3 class="text-uppercase mb-3">Production Experience</h3>
-                    <div class="row">  <div class="col-md-6 col-lg-4 mb-4">  <div class="experience-tile">
-                                <strong>EDDINGTON (TorC Unit)</strong> <br>
-                                Production Coordinator <br>
-                                Feature Film, A24
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>HURRY UP TOMORROW</strong> <br>
-                                Production Coordinator<br>
-                                Feature Film, A3LA / Lionsgate
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>PERRY MASON</strong> <br>
-                                Production Coordinator<br>
-                                Series Wrap, HBO
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>BEEF (Season 2)</strong> <br>
-                                Asst. Production Coordinator<br>
-                                Episodic, A24/Netflix
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>THE MORNING SHOW (Season 4)</strong> <br>
-                                Asst. Production Coordinator<br>
-                                Episodic, AppleTV+
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>ATLAS (2nd Unit) </strong> <br>
-                                Asst. Production Coordinator<br>
-                                Feature, Netflix
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>PERRY MASON (Season 2) </strong> <br>
-                                Asst. Production Coordinator<br>
-                                Episodic, HBO
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>BREAKING (Add'l Photography) </strong> <br>
-                                Asst. Production Coordinator<br>
-                                Feature, Bleeker
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>EDDINGTON </strong> <br>
-                                Travel Coordinator<br>
-                                Feature, A24
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>THE MORNING SHOW (Season 3) </strong> <br>
-                                Travel Coordinator<br>
-                                Episodic, AppleTV+
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>EUPHORIA (Season 2) </strong> <br>
-                                Production Secretary<br>
-                                Episodic, HBO
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>BREAKING </strong> <br>
-                                Production Secretary<br>
-                                Feature, Bleeker
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>THE CRY </strong> <br>
-                                Production Secretary<br>
-                                Episodic, BBC
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>PICNIC AT HANGING ROCK </strong> <br>
-                                Production Secretary<br>
-                                Episodic, Amazon
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>RELIC </strong> <br>
-                                Producer's Assistant<br>
-                                Feature, Carver/AGBO
-                            </div>
-                        </div>
-                </div>
-                <div class="mt-4">
-                    <h3 class="text-uppercase mb-3">Additional Experience</h3>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>Crowdfunding Manager</strong> at Daly <br>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>Content Coordinator</strong> at Carver Films <br>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="experience-tile">
-                                <strong>Executive Assistant</strong> at RGM Artists <br>
-                            </div>
-                        </div>
+                <!-- Skill Block 2 -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-canva-magenta-mid/50 border border-canva-pink-soft/30 flex items-center justify-center text-canva-pink-soft text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-canva-cream-pure mb-4">Paperwork</h3>
+                    <ul class="space-y-3 text-sm text-canva-text-body">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Union Crew Rules & Contracting (IATSE, SAG-AFTRA, DGA)</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Talent Holding & Green Room Logistics</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Extensive Travel Coordination </li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Production Reports</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Insurance - Workers Comp, Medicals, L&D</li>
+                    </ul>
                 </div>
 
+                <!-- Skill Block 3 -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-canva-magenta-mid/50 border border-canva-pink-soft/30 flex items-center justify-center text-canva-butter-glow text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-canva-cream-pure mb-4">Logistics & Equipment</h3>
+                    <ul class="space-y-3 text-sm text-canva-text-body">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Equipment POs & Budget Tracking</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Vendors & Agreements </li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Vendor Purchasing & PO Requisitions</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Specialty - AHA, Drones, Stunts</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-canva-butter-yellow text-xs"></i> Film & Asset Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-12 relative">
+    <div class="max-w-xl mx-auto px-4 sm:px-6">
+        <div class="glass-card p-6 sm:p-8 rounded-2xl border border-canva-butter-yellow/30 shadow-xl">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl sm:text-3xl font-serif font-bold text-canva-cream-pure mb-2 text-glow-title">
+                    Get In Touch
+                </h2>
+                <p class="text-canva-text-body text-sm">
+                    Inquiring about production availability or just want to connect? Send a direct message below.
+                </p>
+            </div>
+
+            <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="name" class="block text-[11px] font-extrabold uppercase tracking-widest text-canva-butter-yellow mb-1.5">Your Name</label>
+                        <input type="text" id="name" required class="w-full px-3.5 py-2.5 rounded-xl bg-canva-royal-dark border border-canva-pink-light/20 text-sm text-canva-cream-pure placeholder-canva-text-muted/50 focus:outline-none focus:border-canva-butter-yellow transition" placeholder="Jane Smith">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-[11px] font-extrabold uppercase tracking-widest text-canva-butter-yellow mb-1.5">Email Address</label>
+                        <input type="email" id="email" required class="w-full px-3.5 py-2.5 rounded-xl bg-canva-royal-dark border border-canva-pink-light/20 text-sm text-canva-cream-pure placeholder-canva-text-muted/50 focus:outline-none focus:border-canva-butter-yellow transition" placeholder="email@email.com">
+                    </div>
+                </div>
+                <div>
+                    <label for="subject" class="block text-[11px] font-extrabold uppercase tracking-widest text-canva-butter-yellow mb-1.5">Subject</label>
+                    <input type="text" id="subject" required class="w-full px-3.5 py-2.5 rounded-xl bg-canva-royal-dark border border-canva-pink-light/20 text-sm text-canva-cream-pure placeholder-canva-text-muted/50 focus:outline-none focus:border-canva-butter-yellow transition" placeholder="G'day Mate">
+                </div>
+                <div>
+                    <label for="message" class="block text-[11px] font-extrabold uppercase tracking-widest text-canva-butter-yellow mb-1.5">Message</label>
+                    <textarea id="message" rows="3" required class="w-full px-3.5 py-2.5 rounded-xl bg-canva-royal-dark border border-canva-pink-light/20 text-sm text-canva-cream-pure placeholder-canva-text-muted/50 focus:outline-none focus:border-canva-butter-yellow transition" placeholder="Let's connect!"></textarea>
+                </div>
+
+                <!-- Custom On-screen Alert Message Box -->
+                <div id="form-message" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+
+                <button type="submit" class="w-full py-3 rounded-xl btn-yellow-glow font-extrabold tracking-wider uppercase text-xs transition mt-2">
+                    Send me a message! 
+                </button>
+            </form>
+
+            <div class="mt-6 pt-6 border-t border-canva-pink-light/10 text-center flex flex-col sm:flex-row justify-center items-center gap-4 text-xs text-canva-text-body">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-canva-butter-yellow"></i>
+                    <a href="mailto:speakmanbec@gmail.com" class="hover:text-canva-cream-pure font-semibold underline">speakmanbec@gmail.com</a>
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-canva-butter-yellow"></i>
+                    <span>Los Angeles, CA</span>
+                </span>
             </div>
         </div>
     </div>
 </section>
-        </section>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Bec Speakman 2025</small></div>
+
+    <footer class="py-8 glass-panel border-t border-canva-pink-light/20 text-center text-xs text-canva-text-muted">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 Bec Speakman. All rights reserved.</p>
+            <div class="flex space-x-6 text-canva-cream-pure text-lg">
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" class="hover:text-canva-butter-yellow transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub" class="hover:text-canva-butter-yellow transition"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:bec@becspeakman.com" aria-label="Email" class="hover:text-canva-butter-yellow transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
         </div>
-        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-        <div class="scroll-to-top d-lg-none position-fixed">
-            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filterable Experience Section Script
+        const filterBtns = document.querySelectorAll('#experience-filters .filter-pill');
+        const expItems = document.querySelectorAll('#experience-list .exp-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                expItems.forEach(item => {
+                    const categories = item.getAttribute('data-category');
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact Form Handling (Without alert/confirm)
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Display inline confirmation banner
+            formMessage.className = 'p-4 rounded-2xl text-sm font-bold bg-canva-magenta-mid text-canva-cream-pure border border-canva-butter-yellow/50 block shadow-lg';
+            formMessage.innerHTML = '<i class="fa-solid fa-circle-check text-canva-butter-yellow mr-2"></i> Thank you! Your message has been sent to bec@becspeakman.com.';
+            
+            contactForm.reset();
+
+            setTimeout(() => {
+                formMessage.className = 'hidden';
+            }, 6000);
+        });
+    </script>
+</body>
 </html>
